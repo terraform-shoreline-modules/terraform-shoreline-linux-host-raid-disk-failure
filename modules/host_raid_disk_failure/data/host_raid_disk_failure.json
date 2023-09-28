@@ -3,10 +3,6 @@
   "description": "Host RAID Disk Failure is an incident type that occurs when at least one device in a RAID array fails. This can result in a loss of data or service interruption. The incident requires attention and possibly a disk swap to restore the RAID array and prevent further failures.",
   "params": [
     {
-      "name": "DISK_DEVICE",
-      "value": ""
-    },
-    {
       "name": "BACKUP_FILE",
       "value": ""
     },
@@ -15,7 +11,11 @@
       "value": ""
     },
     {
-      "name": "RAID_DEVICE",
+      "name": "DISK_DEVICE",
+      "value": ""
+    },
+    {
+      "name": "NUMBER_OF_DISKS",
       "value": ""
     },
     {
@@ -23,7 +23,7 @@
       "value": ""
     },
     {
-      "name": "NUMBER_OF_DISKS",
+      "name": "RAID_DEVICE",
       "value": ""
     },
     {
@@ -176,7 +176,7 @@
       "name": "cell_23",
       "type": "OP_LANG",
       "enabled": true,
-      "content": "host | host_name=$HOST_NAME | invoke_replace_disk_rebuild_array($BACKUP_FILE, $FAILED_DISK, $NEW_DISK, $NUMBER_OF_DISKS)"
+      "content": "host | host_name=$HOST_NAME | invoke_replace_disk_rebuild_array($BACKUP_FILE, $FAILED_DISK, $NUMBER_OF_DISKS, $NEW_DISK)"
     }
   ]
 }

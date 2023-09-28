@@ -18,7 +18,7 @@ resource "shoreline_action" "invoke_replace_disk_rebuild_array" {
   name        = "invoke_replace_disk_rebuild_array"
   description = "Replace the failed disk in the RAID array and rebuild the array."
   command     = "`chmod +x /agent/scripts/replace_disk_rebuild_array.sh && /agent/scripts/replace_disk_rebuild_array.sh`"
-  params      = ["BACKUP_FILE","FAILED_DISK","NEW_DISK","NUMBER_OF_DISKS"]
+  params      = ["BACKUP_FILE","FAILED_DISK","NUMBER_OF_DISKS","NEW_DISK"]
   file_deps   = ["replace_disk_rebuild_array"]
   enabled     = true
   depends_on  = [shoreline_file.replace_disk_rebuild_array]
